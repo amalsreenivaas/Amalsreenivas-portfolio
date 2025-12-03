@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amal Sreenivas – Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #0d0d0d;
+            color: #f1f1f1;
+        }
+
+        /* Smooth fade-in animations */
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        header {
+            width: 100%;
+            padding: 25px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(0,0,0,0.4);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            animation: fadeIn 1.2s ease;
+        }
+
+        header h1 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #bfbfbf;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            padding: 0 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .hero-text {
+            max-width: 55%;
+            animation: fadeUp 1.5s ease;
+        }
+
+        .hero-text h2 {
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .hero-text span {
+            color: #00eaff;
+        }
+
+        .hero-text p {
+            margin-top: 15px;
+            font-size: 18px;
+            opacity: 0.8;
+        }
+
+        .btn-primary {
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #00eaff, #0078ff);
+            color: #000;
+            border-radius: 30px;
+            margin-top: 25px;
+            display: inline-block;
+            font-weight: 600;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-img img {
+            width: 330px;
+            border-radius: 30px;
+            animation: fadeUp 1.5s ease;
+            border: 3px solid #00eaff;
+            box-shadow: 0 0 25px #00eaff99;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 10%;
+            animation: fadeUp 1.2s ease;
+        }
+
+        h2.section-title {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        h2.section-title::after {
+            content: "";
+            width: 70px;
+            height: 4px;
+            background: #00eaff;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            border-radius: 5px;
+        }
+
+        /* Skills */
+        .skills-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: #141414;
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid #222;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            border-color: #00eaff;
+            box-shadow: 0 0 20px #00eaff33;
+        }
+
+        /* Experience */
+        .experience-card {
+            margin-bottom: 25px;
+            background: #141414;
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid #222;
+        }
+
+        /* Projects */
+        .project-card {
+            background: #141414;
+            padding: 20px;
+            border-radius: 14px;
+            border: 1px solid #222;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #000;
+            margin-top: 60px;
+            color: #aaa;
+        }
+
+        /* PROJECT EXAMPLES SECTION */
+.example-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.example-card {
+    background: #141414;
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #1e1e1e;
+    transition: 0.3s;
+    box-shadow: 0 0 15px #00000055;
+}
+
+.example-card:hover {
+    transform: translateY(-10px);
+    border-color: #00eaff;
+    box-shadow: 0 0 25px #00eaff55;
+}
+
+.example-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.example-card h3 {
+    font-size: 20px;
+    color: #00eaff;
+    margin-bottom: 10px;
+}
+
+.example-card p {
+    opacity: 0.85;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Amal Sreenivas</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h2>Hello, I'm <span>Amal Sreenivas</span></h2>
+            <p>
+                A passionate <strong>Software Developer</strong>, <strong>Freelance WordPress Developer</strong>, and
+                <strong>Python Full‑Stack Engineer</strong> building modern applications with clean UI, smart logic,
+                and professional workflows.
+            </p>
+            <a href="#contact" class="btn-primary">Hire Me</a>
+        </div>
+
+        <div class="hero-img">
+            <img src="assets/amal.jpeg" alt="Profile Photo" />
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p>
+            Versatile and results-driven Developer experienced in Python, Java, C#, full‑stack development,
+            and system optimization. I enjoy building fast, scalable applications and delivering high‑quality
+            solutions for businesses and clients.
+            <br><br>
+            I also work as a <strong>Freelance WordPress Developer</strong> creating modern websites for businesses,
+            portfolios, and e‑commerce platforms.
+        </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="skills-box">
+            <div class="skill-card">Python, Java, C#, JavaScript</div>
+            <div class="skill-card">React, Angular, Django, Node.js</div>
+            <div class="skill-card">MySQL, PostgreSQL</div>
+            <div class="skill-card">Git, Docker, REST APIs</div>
+            <div class="skill-card">WordPress Development</div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+        <h2 class="section-title">Experience</h2>
+
+        <div class="experience-card">
+            <h3>Programmer – Info Weavers Technology Pvt Ltd</h3>
+            <p>Jan 2025 – Present</p>
+            <p>Working in Python, Java, and C# for backend and full‑stack applications.</p>
+        </div>
+
+                <div class="experience-card">
+            <h3>WordPress Website Developer - Freelance</h3>
+            <p>Present</p>
+            <p>creating websites as a freelancer.</p>
+        </div>
+
+        <div class="experience-card">
+            <h3>Full Stack Web Developer – Keltron, Ernakulam</h3>
+            <p>Oct 2023 – Aug 2024</p>
+            <p>Built responsive websites using Django, React, and Node.js.</p>
+        </div>
+
+        <div class="experience-card">
+            <h3>Junior Engineer – Wattsun Energy India Pvt Ltd</h3>
+            <p>Aug 2024 – Jan 2025</p>
+            <p>Handled system design, troubleshooting and energy management.</p>
+        </div>
+
+        <div class="experience-card">
+            <h3>Data Entry – Kumon, Palarivattom</h3>
+            <p>Jul 2023 – Jul 2024</p>
+            <p>Managed high‑accuracy data entry workflows.</p>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+
+
+                <div class="project-card">
+            <h3>Health App</h3>
+            <p>Developed with Python Django that helps to book the appointment for a patient will generate auto consultency using the gemini background api connection,ticket generation for patient and admin login for the doctor</p>
+        </div> 
+
+                <div class="project-card">
+            <h3>websites reation </h3>
+            <p>creating website in the WordPress</p>
+        </div>
+
+                <div class="project-card">
+            <h3>QR Code Scanning and generation Application in the Android studio</h3>
+            <p>Developed in the Android studio using the java and xml that scan QR code then it will also create qr code as our wish</p>
+        </div>
+
+                <div class="project-card">
+            <h3>Inventory management system</h3>
+            <p>Developed in the python tkinter desktop application, with api integeration ,rfid integeration etc</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Movie Ticket Reservation App</h3>
+            <p>Developed with Python Django for seamless online bookings.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Smart Robotic Assistant</h3>
+            <p>Arduino‑based interactive AI robot.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Anti‑Theft Luggage Alarm</h3>
+            <p>Security alert system built with Arduino sensors.</p>
+        </div>
+    </section>
+
+
+    <!-- PROJECT EXAMPLES SECTION -->
+<section id="examples">
+    <h2 class="section-title">Project Examples</h2>
+
+    <div class="example-container">
+        
+        <div class="example-card">
+            <img src="assets/example1.jpg" alt="Project Example" />
+            <h3>chatapp</h3>
+            <p>
+                <a href="https://chatapp-3efb6.web.app/">realtime chat app with firebase backened</a>
+            </p>
+        </div>
+
+        <div class="example-card">
+            <img src="assets/example2.jpg" alt="Project Example" />
+            <h3> Website in the google sites</h3>
+            <p>
+                <a href="https://sites.google.com/view/astrasys">Astrasys</a>
+            </p>
+        </div>
+
+        <div class="example-card">
+            <img src="assets/example3.jpg" alt="Project Example" />
+            <h3>Helloworld project</h3>
+            <p>
+                <a href="https://amalsreenivaas.github.io/helloworld/">cretad a helloworld project and hosted n the github</a>
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p>Email: amalsreenivas66@gmail.com</p>
+        <p>Phone: +91 8139090551</p>
+        <p>Location: Kottayam, Kerala</p>
+    </section>
+
+    <footer>© 2025 Amal Sreenivas – All Rights Reserved</footer>
+
+</body>
+</html>
